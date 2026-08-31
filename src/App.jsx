@@ -22,7 +22,7 @@ function App() {
   }
 
   if (loading) return <Loader />
-  return <main><Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollTo={scrollTo} /><Hero scrollTo={scrollTo} /><Metrics /><Trusted /><Experience /><Work /><About scrollTo={scrollTo} /><Stack /><Education /><Contact /><Footer /></main>
+  return <main className='theme-data-flow'><Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollTo={scrollTo} /><Hero scrollTo={scrollTo} /><Metrics /><Trusted /><Experience /><Work /><About scrollTo={scrollTo} /><Stack /><Education /><Contact /><Footer /></main>
 }
 
 export default App
