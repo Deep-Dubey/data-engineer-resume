@@ -40,7 +40,6 @@ html {
 
 body {
   margin: 0;
-  min-width: 320px;
   background:
     radial-gradient(circle at top left, rgba(114, 240, 211, 0.1), transparent 28%),
     radial-gradient(circle at bottom right, rgba(159, 233, 255, 0.08), transparent 18%),
