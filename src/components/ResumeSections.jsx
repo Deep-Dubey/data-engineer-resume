@@ -4,43 +4,44 @@ const experience = [
   {
     period: 'MAY 2024 — PRESENT',
     company: 'KFIN TECHNOLOGIES LTD',
-    role: 'Software Engineer',
-    summary: 'Built and maintained data workflows for the LAMF (Loan Against Mutual Fund) platform to support secure, high-volume financial operations.',
+    role: 'Software Engineer (LAMF)',
+    summary: 'Designed and maintained financial data pipelines feeding the LAMF (Loan Against Mutual Fund) lending platform, integrating high-volume transactional data into Snowflake using Azure Data Factory for regulatory and business reporting.',
     points: [
-      'Designed and optimized ETL/data pipeline workflows to process loan and transaction data with improved reliability and performance.',
-      'Built and maintained data integrations across APIs, databases, and internal services for real-time financial reporting.',
-      'Improved data quality and observability by monitoring pipeline health, reducing issues, and strengthening validation checks.',
-      'Collaborated with product and engineering teams to support analytics dashboards, reporting needs, and operational insights.',
+      'Designed and maintained financial data pipelines for the LAMF lending platform, integrating high-volume transactional data into Snowflake using Azure Data Factory for regulatory and business reporting.',
+      'Built and optimized DBT/SQL transformation workflows and migrated legacy data extracts to an Azure Data Factory-based ingestion process, improving data processing efficiency by 35% and cutting manual intervention by 30%.',
+      'Implemented data validation and monitoring checks on critical lending and transaction pipelines, improving data accuracy and reducing downstream reporting errors by 20% to support audit and compliance needs.',
+      'Debugged and resolved production data issues on customer-facing financial platforms, reducing client issue turnaround time by 40%.',
+      'Developed compliance and business dashboards using Chart.js and Power BI, translating warehouse data into real-time insights for finance and risk stakeholders within Agile sprints.',
     ],
   },
   {
     period: 'SEP 2022 — DEC 2023',
     company: 'EXAVALU SOLUTIONS INDIA PVT LTD',
-    role: 'Developer',
-    summary: 'Delivered secure, mobile-first investor and corporate workflows across theme-based dashboards using React, Tailwind CSS, and REST APIs.',
+    role: 'Developer (Group SIP Platform)',
+    summary: 'Built and maintained data pipelines for the Group SIP platform, extracting and transforming investor contribution and transaction data into a central warehouse using SQL and scheduled jobs.',
     points: [
-      'Built reusable UI components and responsive dashboard interfaces that improved usability across investor and corporate workflows.',
-      'Implemented JWT authentication and role-based access control to secure application access for multiple user groups.',
-      'Integrated third-party APIs and optimized frontend performance, reducing load time and improving overall responsiveness by 20%.',
-      'Collaborated with design and backend teams to refine user experiences and resolve cross-browser issues efficiently.',
+      'Built and maintained data pipelines for the Group SIP platform, extracting and transforming investor contribution and transaction data into a central warehouse using SQL and scheduled jobs.',
+      'Designed data models and transformation logic to consolidate SIP contribution, portfolio, and corporate data, improving data processing efficiency by 25% and reducing reporting turnaround by 20%.',
+      'Built and optimized scheduled data ingestion pipelines pulling data from backend financial data warehouses for Group SIP reporting, improving data refresh performance by 15%; implemented data validation checks and role-based access control to secure sensitive investor data.',
+      'Participated in sprint planning, code reviews, and Agile ceremonies; worked with data and business teams to translate Group SIP reporting requirements into reliable data pipelines and dashboards.',
     ],
   },
   {
     period: 'DEC 2021 — AUG 2022',
     company: 'EXAVALU SOLUTIONS INDIA PVT LTD',
-    role: 'Trainee',
-    summary: 'Built a strong foundation in React, REST APIs, responsive UI design, debugging, and Agile delivery for internal product features.',
+    role: 'Trainee (Group Insurance Policy Management Portal)',
+    summary: 'Assisted in building ETL scripts to ingest, clean, and structure policy and claims data from multiple source systems into standardized formats for downstream reporting.',
     points: [
-      'Created dynamic frontend components and integrated RESTful APIs to support real-time application functionality.',
-      'Resolved cross-browser and UI issues while collaborating closely with design teams on responsive layouts.',
-      'Worked in an Agile environment, contributing to sprint delivery and improving code quality through iterative feedback.',
-      'Learned and applied modern frontend practices including component state management and debugging workflows.',
+      'Assisted in building ETL scripts to ingest, clean, and structure policy and claims data from multiple source systems into standardized formats for downstream reporting.',
+      'Wrote SQL queries to extract, clean, and validate policy issuance and claims data, supporting accurate downstream reporting.',
+      'Collaborated with design and data teams to convert business requirements into data-driven reporting layouts, gaining hands-on experience in Agile development and version control with Git.',
+      'Supported reporting flows and data transformation tasks while learning production-ready engineering and teamwork practices.',
     ],
   },
 ]
 
 export function Metrics() {
-  return <section className="metrics section-pad"><div className="metric-item"><strong>4<span>+</span></strong><p>YEARS BUILDING<br />FOR THE WEB</p></div><div className="metric-item"><strong>25<span>%</span></strong><p>FASTER UI<br />RENDERING</p></div><div className="metric-item"><strong>40<span>%</span></strong><p>FASTER ISSUE<br />TURNAROUND</p></div><div className="metric-item"><strong>8.27</strong><p>MCA<br />CGPA</p></div></section>
+  return <section className="metrics section-pad"><div className="metric-item"><strong>4<span>+</span></strong><p>YEARS BUILDING<br />DATA SYSTEMS</p></div><div className="metric-item"><strong>35<span>%</span></strong><p>PIPELINE<br />EFFICIENCY GAIN</p></div><div className="metric-item"><strong>40<span>%</span></strong><p>FASTER ISSUE<br />TURNAROUND</p></div><div className="metric-item"><strong>8.27</strong><p>MCA<br />CGPA</p></div></section>
 }
 
 export function Experience() {
@@ -51,10 +52,10 @@ export function Experience() {
     <section className="experience section-pad" id="experience">
       <div className="section-heading">
         <div>
-          <p className="section-kicker">CAREER SIGNAL / 2021—PRESENT</p>
-          <h2>Experience that<br /><em>ships.</em></h2>
+          <p className="section-kicker">PROFESSIONAL EXPERIENCE</p>
+          <h2>Experience that<br /><em>drives trust.</em></h2>
         </div>
-        <p className="section-note">Product thinking, production discipline,<br />and a bias toward measurable outcomes.</p>
+        <p className="section-note">Production-grade pipelines, data quality, and compliance-minded engineering for financial platforms.</p>
       </div>
 
       <div className="experience-layout">
@@ -88,5 +89,5 @@ export function Experience() {
 }
 
 export function Education() {
-  return <section className="education section-pad"><div><p className="section-kicker">EDUCATION</p><h2>Built on a<br /><em>strong base.</em></h2></div><div className="education-card"><div><span>2019 — 2022</span><h3>Master of Computer Applications</h3><p>Birla Institute of Technology, Mesra</p></div><strong>8.27 <small>CGPA</small></strong></div></section>
+  return <section className="education section-pad"><div><p className="section-kicker">EDUCATION</p><h2>Built on a<br /><em>strong base.</em></h2></div><div className="education-card"><div><span>JUNE 2019 — JULY 2022</span><h3>Master of Computer Applications (MCA)</h3><p>Birla Institute of Technology, Mesra</p></div><strong>8.27 <small>CGPA</small></strong></div></section>
 }
