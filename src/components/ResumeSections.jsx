@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const experience = [
   {
@@ -76,12 +77,22 @@ export function Experience() {
         </div>
 
         <div className="experience-panel" role="tabpanel" aria-live="polite">
-          <h3>{activeItem.role}</h3>
-          <p className="experience-company">{activeItem.company}</p>
-          <p className="experience-summary">{activeItem.summary}</p>
-          <ul>
-            {activeItem.points.map((point) => <li key={point}>{point}</li>)}
-          </ul>
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.22, ease: 'easeOut' }}
+            >
+              <h3>{activeItem.role}</h3>
+              <p className="experience-company">{activeItem.company}</p>
+              <p className="experience-summary">{activeItem.summary}</p>
+              <ul>
+                {activeItem.points.map((point) => <li key={point}>{point}</li>)}
+              </ul>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

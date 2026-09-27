@@ -18,19 +18,19 @@
 
 :root,
 [data-theme="dark"] {
-  --bg: #09090b;
-  --bg-elevated: #18181b;
-  --bg-soft: #27272a;
-  --surface: rgba(24, 24, 27, 0.9);
-  --surface-strong: rgba(9, 9, 11, 0.96);
-  --line: rgba(161, 161, 170, 0.15);
-  --text: #fafafa;
-  --text-secondary: #a1a1aa;
-  --accent: #34d399;
-  --accent-hover: #6ee7b7;
-  --accent-soft: rgba(52, 211, 153, 0.12);
-  --accent-text: #09090b;
-  --shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  --bg: #101512;
+  --bg-elevated: #191f1b;
+  --bg-soft: #222a24;
+  --surface: rgba(25, 31, 27, 0.94);
+  --surface-strong: rgba(16, 21, 18, 0.98);
+  --line: rgba(190, 211, 196, 0.14);
+  --text: #f1f5f1;
+  --text-secondary: #acb8af;
+  --accent: #80c99b;
+  --accent-hover: #9cddb0;
+  --accent-soft: rgba(128, 201, 155, 0.13);
+  --accent-text: #101712;
+  --shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
   --sans: 'Geist', system-ui, -apple-system, sans-serif;
   --mono: 'Geist Mono', 'SF Mono', 'Fira Code', monospace;
 
@@ -45,19 +45,19 @@
 }
 
 [data-theme="light"] {
-  --bg: #fafafa;
+  --bg: #f4f7f4;
   --bg-elevated: #ffffff;
-  --bg-soft: #f4f4f5;
-  --surface: rgba(255, 255, 255, 0.9);
-  --surface-strong: rgba(250, 250, 250, 0.96);
-  --line: rgba(24, 24, 27, 0.1);
-  --text: #18181b;
-  --text-secondary: #71717a;
-  --accent: #059669;
-  --accent-hover: #047857;
-  --accent-soft: rgba(5, 150, 105, 0.08);
+  --bg-soft: #edf2ee;
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-strong: rgba(247, 250, 247, 0.98);
+  --line: rgba(31, 51, 38, 0.13);
+  --text: #1a261f;
+  --text-secondary: #516057;
+  --accent: #16794c;
+  --accent-hover: #116640;
+  --accent-soft: rgba(22, 121, 76, 0.1);
   --accent-text: #ffffff;
-  --shadow: 0 24px 64px rgba(0, 0, 0, 0.06);
+  --shadow: 0 22px 56px rgba(23, 40, 30, 0.08);
   color-scheme: light;
 }
 
@@ -79,7 +79,7 @@ body {
 
 #root {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -98,6 +98,11 @@ button {
   border: 0;
   background: none;
   color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 main section {

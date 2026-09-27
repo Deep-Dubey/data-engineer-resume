@@ -4,7 +4,7 @@
 
 main {
   overflow-x: hidden;
-  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
 }
@@ -14,9 +14,9 @@ main {
 }
 
 .section-pad {
-  max-width: 1240px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 88px 32px 0;
+  padding: clamp(64px, 6vw, 96px) clamp(24px, 4vw, 64px) 0;
 }
 
 .section-heading {
@@ -24,12 +24,12 @@ main {
   align-items: flex-end;
   justify-content: space-between;
   gap: 28px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .section-kicker {
   font: 11px/1 var(--mono);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 12px;
@@ -109,9 +109,9 @@ main {
   position: sticky;
   top: 0;
   z-index: 50;
-  max-width: 1240px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 18px 32px;
+  padding: 16px clamp(24px, 4vw, 64px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -223,15 +223,15 @@ main {
 
 .hero {
   position: relative;
-  max-width: 1240px;
-  margin: 32px auto 0;
-  padding: 48px clamp(24px, 5vw, 56px);
+  max-width: 1360px;
+  margin: 24px auto 0;
+  padding: clamp(36px, 5vw, 72px) clamp(24px, 4vw, 64px);
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: center;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 20px;
   background: var(--bg-elevated);
   box-shadow: var(--shadow);
   transition: background 0.3s ease, border-color 0.3s ease;
@@ -371,25 +371,25 @@ main {
 .metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-  padding-top: 48px;
-  padding-bottom: 24px;
+  gap: 0;
+  padding-top: clamp(32px, 4vw, 48px);
+  padding-bottom: 16px;
 }
 
 .metric-item {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 24px 20px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--bg-elevated);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  padding: 16px 24px;
+  border-left: 1px solid var(--line);
 }
 
-.metric-item:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+.metric-item:first-child {
+  border-left: 0;
+}
+
+.metric-item:hover strong {
+  color: var(--accent);
 }
 
 .metric-item strong {
@@ -417,24 +417,29 @@ main {
    Tech Strip
    ========================================================================== */
 
-.tech-strip {
-  padding-top: 24px;
-  padding-bottom: 24px;
+.section-pad.tech-strip {
+  width: 100%;
+  max-width: 1360px;
+  padding: 24px clamp(12px, 3vw, 40px);
 }
 
 .tech-logos {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   justify-content: center;
-  padding: 18px 24px;
+  padding: 18px clamp(12px, 2.5vw, 32px);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   background: var(--bg-elevated);
 }
 
 .tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 6px 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -581,14 +586,14 @@ main {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .project {
-  padding: 24px;
+  padding: clamp(16px, 2vw, 24px);
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 16px;
   background: var(--bg-elevated);
   display: flex;
   flex-direction: column;
@@ -603,7 +608,7 @@ main {
 }
 
 .project-alt {
-  background: var(--bg-soft);
+  background: var(--bg-elevated);
 }
 
 .project-top {
@@ -617,10 +622,11 @@ main {
 }
 
 .project-visual {
-  height: 200px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   position: relative;
-  margin: 20px 0;
-  border-radius: 14px;
+  margin: 16px 0;
+  border-radius: 12px;
   background: var(--bg);
   border: 1px solid var(--line);
   overflow: hidden;
@@ -692,7 +698,7 @@ main {
    ========================================================================== */
 
 .statement {
-  max-width: 960px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 88px 32px;
   border-bottom: 1px solid var(--line);
@@ -704,6 +710,7 @@ main {
 }
 
 .statement-copy {
+  max-width: 68ch;
   font-size: 16px;
   line-height: 1.7;
   color: var(--text-secondary);
@@ -745,15 +752,15 @@ main {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
   margin-top: 16px;
 }
 
 .skill-card {
-  padding: 22px 24px;
+  padding: 20px 22px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   background: var(--bg-elevated);
   transition: border-color 0.2s ease;
 }
@@ -779,7 +786,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font: 11px var(--mono);
+  font: 12px var(--mono);
   letter-spacing: 0.04em;
   padding: 6px 10px;
   border-radius: 6px;
@@ -815,7 +822,7 @@ main {
   margin-top: 24px;
   padding: 28px 32px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   background: var(--bg-elevated);
 }
 
@@ -869,7 +876,7 @@ main {
 .contact-inner {
   text-align: center;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 18px;
   padding: 64px 32px 48px;
   background: var(--bg-elevated);
 }
@@ -928,7 +935,7 @@ main {
    ========================================================================== */
 
 footer {
-  max-width: 1240px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 24px 32px 36px;
   display: flex;
@@ -974,6 +981,13 @@ footer {
    Responsive Adaptations
    ========================================================================== */
 
+@media (max-width: 1100px) {
+  .project-grid,
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
@@ -988,16 +1002,16 @@ footer {
     width: 100%;
   }
 
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
   .metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metric-item:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .metric-item:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
   }
 
   .experience-layout {
@@ -1076,6 +1090,10 @@ footer {
     padding: 64px 20px 0;
   }
 
+  .statement {
+    padding: 64px 20px;
+  }
+
   .section-heading {
     flex-direction: column;
     align-items: flex-start;
@@ -1085,7 +1103,22 @@ footer {
 
   .metrics {
     grid-template-columns: 1fr;
-    gap: 10px;
+  }
+
+  .metric-item,
+  .metric-item:nth-child(odd) {
+    padding: 16px 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .metric-item:first-child {
+    border-top: 0;
+  }
+
+  .project-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 
   .education-card {
@@ -1109,5 +1142,16 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

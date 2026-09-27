@@ -16,9 +16,11 @@ import {
 import {
   SiApacheairflow,
   SiApachekafka,
+  SiDatabricks,
   SiDocker,
   SiGit,
   SiGithubactions,
+  SiGooglebigquery,
   SiGooglecloud,
   SiMongodb,
   SiMysql,
@@ -29,19 +31,40 @@ import {
   SiGmail,
 } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+
+const projectGridVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.16 } },
+}
+
+const projectVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+}
 
 /* ── Tech Stack ── */
 export function TechStack() {
   const tools = [
-    'Azure', 'Snowflake', 'dbt', 'Python',
-    'SQL', 'Kafka', 'Airflow', 'Databricks', 'BigQuery',
+    { name: 'Azure', icon: Cloud },
+    { name: 'Snowflake', icon: SiSnowflake },
+    { name: 'dbt', icon: Workflow },
+    { name: 'Python', icon: SiPython },
+    { name: 'SQL', icon: Database },
+    { name: 'Kafka', icon: SiApachekafka },
+    { name: 'Airflow', icon: SiApacheairflow },
+    { name: 'Databricks', icon: SiDatabricks },
+    { name: 'BigQuery', icon: SiGooglebigquery },
   ]
 
   return (
     <section className="tech-strip section-pad">
       <div className="tech-logos">
         {tools.map((t) => (
-          <span key={t} className="tech-pill">{t}</span>
+          <span key={t.name} className="tech-pill">
+            <t.icon size={14} aria-hidden="true" />
+            {t.name}
+          </span>
         ))}
       </div>
     </section>
@@ -62,8 +85,14 @@ export function Work() {
         </p>
       </div>
 
-      <div className="project-grid">
-        <article className="project">
+      <motion.div
+        className="project-grid"
+        variants={projectGridVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.18 }}
+      >
+        <motion.article className="project" variants={projectVariants}>
           <div className="project-top">
             <span>FINANCIAL TRADE PLATFORM</span>
             <span>GCP</span>
@@ -77,9 +106,9 @@ export function Work() {
             tags={['PySpark', 'BigQuery', 'Airflow', 'Terraform']}
             link="https://github.com/Deep-Dubey/financial-trade-platform"
           />
-        </article>
+        </motion.article>
 
-        <article className="project project-alt">
+        <motion.article className="project project-alt" variants={projectVariants}>
           <div className="project-top">
             <span>ENTERPRISE SALES ETL PIPELINE</span>
             <span>GCP</span>
@@ -93,9 +122,9 @@ export function Work() {
             tags={['PySpark', 'Dataproc', 'Cloud Functions', 'GitHub Actions']}
             link="https://github.com/Deep-Dubey/enterprise-sales-etl"
           />
-        </article>
+        </motion.article>
 
-        <article className="project">
+        <motion.article className="project" variants={projectVariants}>
           <div className="project-top">
             <span>BANKING REAL-TIME DATA PLATFORM</span>
             <span>KAFKA</span>
@@ -109,8 +138,8 @@ export function Work() {
             tags={['Kafka', 'Airflow', 'GCS', 'Streaming']}
             link="https://github.com/Deep-Dubey/banking-realtime-platform/tree/main/banking-realtime-platform"
           />
-        </article>
-      </div>
+        </motion.article>
+      </motion.div>
     </section>
   )
 }

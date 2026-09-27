@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { MotionConfig } from 'framer-motion'
 import './App.css'
 import './fullscreen.css'
 import { ThemeProvider } from './context/ThemeProvider'
@@ -26,19 +27,21 @@ function App() {
 
   return (
     <ThemeProvider>
-      <main>
-        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollTo={scrollTo} />
-        <Hero scrollTo={scrollTo} />
-        <Metrics />
-        <TechStack />
-        <Experience />
-        <Work />
-        <About scrollTo={scrollTo} />
-        <Stack />
-        <Education />
-        <Contact />
-        <Footer />
-      </main>
+      <MotionConfig reducedMotion="user">
+        <main>
+          <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollTo={scrollTo} />
+          <Hero scrollTo={scrollTo} />
+          <Metrics />
+          <TechStack />
+          <Experience />
+          <Work />
+          <About scrollTo={scrollTo} />
+          <Stack />
+          <Education />
+          <Contact />
+          <Footer />
+        </main>
+      </MotionConfig>
     </ThemeProvider>
   )
 }
