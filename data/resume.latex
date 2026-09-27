@@ -1,0 +1,136 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,margin=0.6in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{itemsep=1pt, topsep=2pt, parsep=0pt, leftmargin=1.3em}
+
+\definecolor{headingblue}{HTML}{1F4E79}
+
+\titleformat{\section}{\color{headingblue}\Large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titleformat{\subsection}[runin]{\bfseries}{}{0em}{}[ -- ]
+\setlength{\parskip}{0pt}
+
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\LARGE \textbf{Deep Dubey}} \\
+    \vspace{1mm}
+    {\large \textbf{Data Engineer | Azure Data Platforms}} \\
+    \vspace{1mm}
+    Hyderabad, India ~|~ +91 9052057751 ~|~ \href{mailto:deepdubey1995@gmail.com}{deepdubey1995@gmail.com} ~|~ \href{https://www.linkedin.com/in/deep-dubey-140650a6/}{LinkedIn} ~|~ \href{https://github.com/Deep-Dubey}{GitHub} ~|~ \href{https://deep-dubey-data-engineer-portfolio.netlify.app/}{Portfolio}
+\end{center}
+
+% Summary
+\section*{Professional Summary}
+Data Engineer with \textbf{4.4+} years of experience designing and operating batch and real-time data pipelines on \textbf{Azure}, using \textbf{Azure SQL}, \textbf{Synapse Analytics}, \textbf{Databricks}, \textbf{Data Factory}, \textbf{ADLS Gen2}, \textbf{PySpark}, \textbf{SQL}, \textbf{dbt}, \textbf{Airflow}, and \textbf{Kafka}. Experienced in building scalable data platforms for financial services and fintech, with expertise in high-volume transactional workloads, data transformation, orchestration, data governance, security (Azure Key Vault, RBAC), quality, and regulatory/audit reporting (SEBI/RBI) within Agile environments.
+
+% Skills
+\section*{Technical Skills}
+
+\textbf{Azure Data Platform:} Azure SQL Database, Azure Synapse Analytics (Spark \& SQL), Azure Data Factory, Azure Databricks, ADLS Gen2, Blob Storage, Azure Functions, Azure Key Vault, Azure Monitor \\
+\textbf{Data Warehousing \& Data Layer:} Snowflake, Azure Synapse Analytics / SQL DW, BigQuery \\
+\textbf{Big Data \& Streaming:} PySpark, Spark, Databricks, Apache Kafka (topics, Schema Registry) \\
+\textbf{Data Transformation \& ETL/ELT:} DBT (Data Build Tool), Azure Data Factory Pipelines, Data Modeling, Data Cleansing \\
+\textbf{Open Source Orchestration:} Apache Airflow, Cloud Composer, Scheduled Pipelines \\
+\textbf{Languages:} SQL, Python, (Spark/Python) \\
+\textbf{Databases:} SQL Server, Azure SQL, MySQL, Snowflake, MongoDB \\
+\textbf{Data Governance \& Compliance:} Data Quality \& Validation, Control Monitoring, Data Inventory Management, Role-Based Access Control, Azure Key Vault, SEBI/RBI Regulatory \& Audit Reporting \\
+\textbf{Infrastructure \& CI/CD:} Terraform, GitHub Actions, OIDC Authentication, Azure Monitor, CI/CD \\
+\textbf{Other Cloud:} Google Cloud Platform (GCS, BigQuery, Dataproc, Cloud Composer) \\
+\textbf{Productivity \& Visualization:} Power BI, Tableau, Chart.js, MS Excel, MS Word, MS PowerPoint \\
+\textbf{Dev Tools:} Git \\
+\textbf{Domain Expertise:} Financial Services \& Fintech, Lending \& Investment Platforms, Transaction Data Processing, Data Security \& Access Control, SEBI/RBI Regulatory \& Audit Reporting, Compliance Analytics \\
+\textbf{Other:} Agile/Scrum, Performance Optimization
+
+% Experience
+\section*{Professional Experience}
+
+\subsection{KFin Technologies Ltd} \hfill \textit{May 2024 -- Present} \\
+\textit{Data Engineer (Software Engineer -- LAMF, Loan Against Mutual Fund)}
+
+\begin{itemize}
+  \item Designed and operated the data layer for the LAMF (Loan Against Mutual Fund) lending platform, building batch data pipelines with Azure Data Factory, Azure Databricks (Spark), and Azure SQL/Synapse SQL pools to integrate high-volume transactional data into Snowflake for SEBI/RBI regulatory and business reporting.
+
+  \item Identified workflow inefficiencies in legacy data extract processes and built automation solutions using DBT/SQL transformation workflows on Azure Data Factory, improving data processing efficiency by 35\% and cutting manual intervention by 30\%.
+
+  \item Implemented data validation, control monitoring, and inventory tracking checks on critical lending and transaction pipelines -- securing credentials with Azure Key Vault and monitoring pipeline health via Azure Monitor -- closing control gaps and reducing downstream reporting errors by 20\% to support SEBI/RBI audit, governance, and compliance needs.
+
+  \item Debugged and resolved production data issues on customer-facing financial platforms, reducing client issue turnaround time by 40\%.
+
+  \item Developed compliance and business dashboards using Chart.js and Power BI, and presented pipeline performance and data-quality findings directly to finance and risk stakeholders; collaborated with backend, data, and QA teams within Agile sprints.
+\end{itemize}
+
+\subsection{Exavalu Solutions India Pvt Ltd} \hfill \textit{Sep 2022 -- Dec 2023} \\
+\textit{Developer -- Group SIP Platform}
+
+\begin{itemize}
+  \item Built and maintained data pipelines for the Group SIP (Systematic Investment Plan) platform, extracting and transforming investor contribution and transaction data into a central data warehouse using SQL and scheduled jobs.
+
+  \item Designed data models and SQL-based transformation logic to consolidate SIP contribution, portfolio, and corporate data, improving data processing efficiency by 25\% and reducing reporting turnaround by 20\%.
+
+  \item Automated scheduled data ingestion pipelines pulling data from backend financial data warehouses for Group SIP reporting, improving data refresh performance by 15\%; implemented data validation checks and role-based access control to secure sensitive investor data in line with data governance standards.
+
+  \item Participated in sprint planning, code reviews, and Agile ceremonies; worked with data and business teams to translate Group SIP reporting requirements into reliable data pipelines and dashboards.
+\end{itemize}
+
+\subsection{Exavalu Solutions India Pvt Ltd} \hfill \textit{Dec 2021 -- Aug 2022} \\
+\textit{Trainee -- Group Insurance Policy Management Portal}
+
+\begin{itemize}
+  \item Assisted in building ETL scripts to ingest, clean, and structure policy and claims data from multiple source systems into standardized formats for downstream reporting.
+
+  \item Wrote SQL queries to extract, clean, and validate policy issuance and claims data, supporting accurate downstream reporting and data quality.
+
+  \item Collaborated with design and data teams to convert business requirements into data-driven reporting layouts, gaining hands-on experience in Agile development and version control with Git.
+\end{itemize}
+
+% Projects
+\section*{Projects}
+
+\textbf{Banking Real-Time Data Platform} -- \href{https://github.com/Deep-Dubey/banking-realtime-platform}{GitHub}
+\begin{itemize}
+    \item Building a real-time banking data platform using Apache Kafka (topics, Schema Registry) to stream simulated transaction events -- comparable to Azure Event Hub-based ingestion -- landing raw data into Google Cloud Storage for downstream processing.
+
+    \item Orchestrating ingestion workflows with Apache Airflow and structuring environment/dependency configuration for reproducible, production-style deployment.
+\end{itemize}
+
+\textbf{Financial Trade Processing Platform} -- \href{https://github.com/Deep-Dubey/financial-trade-platform}{GitHub}
+\begin{itemize}
+    \item Built a production-style financial trade data platform on GCP (GCS, BigQuery, Dataproc, Cloud Composer) using PySpark, implementing 10+ business validation rules (duplicate/null trade IDs, invalid customer/account/security, negative price, future-dated and high-value trade detection) with automated reject handling and audit reporting.
+
+    \item Designed a Star Schema (Fact Trade with Customer, Account, and Security dimensions), writing curated Parquet datasets to GCS and loading analytics-ready tables into BigQuery; orchestrated the full workflow with Apache Airflow DAGs on Cloud Composer.
+
+    \item Provisioned infrastructure as code with Terraform and automated testing/deployment via GitHub Actions CI/CD (OIDC-based authentication); built Looker Studio/Power BI dashboards for trade volume and high-value trade analytics, backed by a pytest suite covering validation and load logic.
+\end{itemize}
+
+\textbf{Enterprise Sales ETL Pipeline} -- \href{https://github.com/Deep-Dubey/enterprise-sales-etl}{GitHub}
+\begin{itemize}
+    \item Built an enterprise-grade sales ETL pipeline on GCP using PySpark, orchestrated with Apache Airflow on Cloud Composer and executed on auto-provisioned Dataproc clusters, with GCP Cloud Functions handling event-driven automation (Python-based serverless functions).
+
+    \item Implemented CI/CD with GitHub Actions using OIDC-based authentication (no static cloud credentials), including pipeline monitoring/alerting and a pytest unit test suite for data transformation reliability.
+\end{itemize}
+
+% Education
+\section*{Education}
+
+\textbf{Master of Computer Applications (MCA)} \hfill \textit{June 2019 -- July 2022} \\
+Birla Institute of Technology, Mesra \hfill CGPA: 8.27
+
+% Soft Skills
+\section*{Soft Skills \& Collaboration}
+
+\begin{itemize}
+  \item Strong communication and stakeholder presentation skills; experienced presenting technical findings and recommendations to cross-functional partners in Agile/Scrum teams and retrospectives
+
+  \item Skilled in code/pipeline reviews and mentoring juniors; strong analytical mindset focused on identifying process inefficiencies, control gaps, data governance, and performance/cost optimization
+\end{itemize}
+
+\end{document}

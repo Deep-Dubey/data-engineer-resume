@@ -1,27 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('./assets/fonts/GeistMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
-:root {
-  --bg: #071018;
-  --bg-elevated: #0d1823;
-  --bg-soft: #101f2d;
-  --panel: rgba(14, 25, 35, 0.9);
-  --panel-strong: rgba(10, 17, 25, 0.96);
-  --line: rgba(146, 167, 187, 0.16);
-  --text: #dfeaf9;
-  --muted: #8ea4bb;
-  --paper: #f4f8ff;
-  --ink: #071018;
-  --accent: #72f0d3;
-  --accent-strong: #9fe9ff;
-  --accent-soft: rgba(114, 240, 211, 0.14);
-  --shadow: 0 30px 80px rgba(2, 8, 16, 0.52);
-  --sans: 'Manrope', sans-serif;
-  --heading: 'Manrope', sans-serif;
-  --mono: 'DM Mono', monospace;
+:root,
+[data-theme="dark"] {
+  --bg: #09090b;
+  --bg-elevated: #18181b;
+  --bg-soft: #27272a;
+  --surface: rgba(24, 24, 27, 0.9);
+  --surface-strong: rgba(9, 9, 11, 0.96);
+  --line: rgba(161, 161, 170, 0.15);
+  --text: #fafafa;
+  --text-secondary: #a1a1aa;
+  --accent: #34d399;
+  --accent-hover: #6ee7b7;
+  --accent-soft: rgba(52, 211, 153, 0.12);
+  --accent-text: #09090b;
+  --shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  --sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --mono: 'Geist Mono', 'SF Mono', 'Fira Code', monospace;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
+  font: 16px/1.55 var(--sans);
   color-scheme: dark;
   color: var(--text);
   background: var(--bg);
@@ -31,7 +44,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-* { box-sizing: border-box; }
+[data-theme="light"] {
+  --bg: #fafafa;
+  --bg-elevated: #ffffff;
+  --bg-soft: #f4f4f5;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: rgba(250, 250, 250, 0.96);
+  --line: rgba(24, 24, 27, 0.1);
+  --text: #18181b;
+  --text-secondary: #71717a;
+  --accent: #059669;
+  --accent-hover: #047857;
+  --accent-soft: rgba(5, 150, 105, 0.08);
+  --accent-text: #ffffff;
+  --shadow: 0 24px 64px rgba(0, 0, 0, 0.06);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -40,11 +72,9 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(114, 240, 211, 0.1), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(159, 233, 255, 0.08), transparent 18%),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 #root {
@@ -54,9 +84,14 @@ body {
   flex-direction: column;
 }
 
-button, a { font: inherit; }
+button, a {
+  font: inherit;
+}
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 button {
   cursor: pointer;
@@ -65,26 +100,16 @@ button {
   color: inherit;
 }
 
-main {
-  transition: background 0.4s ease;
-}
-
-main.theme-data-flow {
-  --accent: #72f0d3;
-  --accent-strong: #9fe9ff;
-  --accent-soft: rgba(114, 240, 211, 0.14);
-}
-
 main section {
   position: relative;
 }
 
 h1, h2, h3, h4 {
   margin: 0;
-  color: var(--paper);
-  letter-spacing: -0.06em;
-  line-height: 0.98;
-  font-family: var(--heading);
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-family: var(--sans);
   font-weight: 700;
 }
 

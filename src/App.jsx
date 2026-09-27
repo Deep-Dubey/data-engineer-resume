@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import './fullscreen.css'
+import { ThemeProvider } from './context/ThemeProvider'
 import Loader from './components/Loader'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import { About, Contact, Footer, Stack, Trusted, Work } from './components/Sections'
+import { About, Contact, Footer, Stack, TechStack, Work } from './components/Sections'
 import { Education, Experience, Metrics } from './components/ResumeSections'
 
 function App() {
@@ -22,7 +23,24 @@ function App() {
   }
 
   if (loading) return <Loader />
-  return <main className='theme-data-flow'><Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollTo={scrollTo} /><Hero scrollTo={scrollTo} /><Metrics /><Trusted /><Experience /><Work /><About scrollTo={scrollTo} /><Stack /><Education /><Contact /><Footer /></main>
+
+  return (
+    <ThemeProvider>
+      <main>
+        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollTo={scrollTo} />
+        <Hero scrollTo={scrollTo} />
+        <Metrics />
+        <TechStack />
+        <Experience />
+        <Work />
+        <About scrollTo={scrollTo} />
+        <Stack />
+        <Education />
+        <Contact />
+        <Footer />
+      </main>
+    </ThemeProvider>
+  )
 }
 
 export default App
