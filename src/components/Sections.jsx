@@ -1,5 +1,33 @@
-import { ArrowUpRight, BarChart3, ExternalLink, Radio } from 'lucide-react'
-import { SiGithub, SiGmail } from 'react-icons/si'
+import {
+  ArrowUpRight,
+  BarChart3,
+  Briefcase,
+  Cloud,
+  Code2,
+  Database,
+  ExternalLink,
+  FileSpreadsheet,
+  GitBranch,
+  Layers,
+  Radio,
+  ShieldCheck,
+  Workflow,
+} from 'lucide-react'
+import {
+  SiApacheairflow,
+  SiApachekafka,
+  SiDocker,
+  SiGit,
+  SiGithubactions,
+  SiGooglecloud,
+  SiMongodb,
+  SiMysql,
+  SiPython,
+  SiSnowflake,
+  SiTerraform,
+  SiGithub,
+  SiGmail,
+} from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 
 /* ── Tech Stack ── */
@@ -40,15 +68,8 @@ export function Work() {
             <span>FINANCIAL TRADE PLATFORM</span>
             <span>GCP</span>
           </div>
-          <div className="pipeline-art">
-            <div className="data-node node-a">GCS</div>
-            <div className="data-node node-b">PySpark</div>
-            <div className="data-node node-c">BigQuery</div>
-            <div className="connector c-one" />
-            <div className="connector c-two" />
-            <div className="chart-line">
-              <i /><i /><i /><i /><i /><i />
-            </div>
+          <div className="project-visual">
+            <img src="/projects/financial_trade_platform.jpg" alt="Financial trade data pipeline project artwork" />
           </div>
           <ProjectInfo
             title="Financial Trade Platform"
@@ -63,12 +84,8 @@ export function Work() {
             <span>ENTERPRISE SALES ETL PIPELINE</span>
             <span>GCP</span>
           </div>
-          <div className="signal-art">
-            <BarChart3 size={30} />
-            <div className="bars">
-              <i /><i /><i /><i /><i /><i /><i />
-            </div>
-            <span className="signal-label">ETL</span>
+          <div className="project-visual">
+            <img src="/projects/enterprise_sales_etl.jpg" alt="Enterprise sales ETL project artwork" />
           </div>
           <ProjectInfo
             title="Enterprise Sales ETL"
@@ -83,15 +100,8 @@ export function Work() {
             <span>BANKING REAL-TIME DATA PLATFORM</span>
             <span>KAFKA</span>
           </div>
-          <div className="pipeline-art">
-            <div className="data-node node-a">Kafka</div>
-            <div className="data-node node-b">Schema</div>
-            <div className="data-node node-c">GCS</div>
-            <div className="connector c-one" />
-            <div className="connector c-two" />
-            <div className="chart-line">
-              <i /><i /><i /><i /><i /><i />
-            </div>
+          <div className="project-visual">
+            <img src="/projects/banking_realtime_platform.jpg" alt="Banking real-time data platform project artwork" />
           </div>
           <ProjectInfo
             title="Banking Real-Time Platform"
@@ -150,15 +160,34 @@ export function About({ scrollTo }) {
 /* ── Skills (Grouped Card Grid) ── */
 export function Stack() {
   const categories = [
-    { title: 'Cloud Platforms', tools: ['Microsoft Azure', 'Google Cloud Platform'] },
-    { title: 'Data Warehousing', tools: ['Snowflake', 'Azure Synapse', 'BigQuery'] },
-    { title: 'Big Data & Streaming', tools: ['PySpark', 'Apache Kafka', 'Schema Registry', 'Dataproc'] },
-    { title: 'Transformation & Orchestration', tools: ['dbt', 'Azure Data Factory', 'Apache Airflow', 'Cloud Composer'] },
-    { title: 'Languages & Modeling', tools: ['SQL', 'Python', 'Data Modeling', 'Data Validation'] },
-    { title: 'Infrastructure & Delivery', tools: ['Terraform', 'GitHub Actions', 'Docker', 'Git', 'CI/CD'] },
-    { title: 'Governance & Security', tools: ['RBAC', 'Azure Key Vault', 'SEBI/RBI Reporting', 'Data Quality'] },
-    { title: 'Visualization & Analytics', tools: ['Power BI', 'Tableau', 'Chart.js'] },
+    { title: 'Azure Data Platform', icon: Cloud, tools: ['Azure SQL Database', 'Azure Synapse Analytics (Spark & SQL)', 'Azure Data Factory', 'Azure Databricks', 'ADLS Gen2', 'Blob Storage', 'Azure Functions', 'Azure Key Vault', 'Azure Monitor'] },
+    { title: 'Warehousing & Data Layer', icon: Database, tools: ['Snowflake', 'Azure Synapse Analytics / SQL DW', 'BigQuery', 'SQL Server', 'Azure SQL', 'MySQL', 'MongoDB'] },
+    { title: 'Big Data & Streaming', icon: Layers, tools: ['PySpark', 'Spark', 'Databricks', 'Apache Kafka (topics, Schema Registry)'] },
+    { title: 'Transformation & ETL/ELT', icon: Workflow, tools: ['dbt (Data Build Tool)', 'Azure Data Factory Pipelines', 'Data Modeling', 'Data Cleansing'] },
+    { title: 'Orchestration', icon: Workflow, tools: ['Apache Airflow', 'Cloud Composer', 'Scheduled Pipelines'] },
+    { title: 'Languages', icon: Code2, tools: ['SQL', 'Python', 'Spark / Python'] },
+    { title: 'Governance & Compliance', icon: ShieldCheck, tools: ['Data Quality & Validation', 'Control Monitoring', 'Data Inventory Management', 'Role-Based Access Control', 'Azure Key Vault', 'SEBI/RBI Regulatory & Audit Reporting'] },
+    { title: 'Infrastructure & CI/CD', icon: GitBranch, tools: ['Terraform', 'GitHub Actions', 'OIDC Authentication', 'Azure Monitor', 'CI/CD', 'Git', 'Docker'] },
+    { title: 'Google Cloud Platform', icon: Cloud, tools: ['GCS', 'BigQuery', 'Dataproc', 'Cloud Composer'] },
+    { title: 'Visualization & Productivity', icon: BarChart3, tools: ['Power BI', 'Tableau', 'Chart.js', 'MS Excel', 'MS Word', 'MS PowerPoint'] },
+    { title: 'Domain Expertise', icon: Briefcase, tools: ['Financial Services & Fintech', 'Lending & Investment Platforms', 'Transaction Data Processing', 'Data Security & Access Control', 'SEBI/RBI Regulatory & Audit Reporting', 'Compliance Analytics'] },
+    { title: 'Ways of Working', icon: FileSpreadsheet, tools: ['Agile/Scrum', 'Performance Optimization'] },
   ]
+  const toolIcons = {
+    'Apache Airflow': SiApacheairflow,
+    'Apache Kafka (topics, Schema Registry)': SiApachekafka,
+    'Cloud Composer': SiGooglecloud,
+    Docker: SiDocker,
+    Git: SiGit,
+    'GitHub Actions': SiGithubactions,
+    BigQuery: SiGooglecloud,
+    GCS: SiGooglecloud,
+    MongoDB: SiMongodb,
+    MySQL: SiMysql,
+    Python: SiPython,
+    Snowflake: SiSnowflake,
+    Terraform: SiTerraform,
+  }
 
   return (
     <section className="section-pad" id="stack">
@@ -173,9 +202,15 @@ export function Stack() {
           <div key={cat.title} className="skill-card">
             <h3>{cat.title}</h3>
             <div className="skill-pills">
-              {cat.tools.map((t) => (
-                <span key={t} className="pill">{t}</span>
-              ))}
+              {cat.tools.map((tool) => {
+                const Icon = toolIcons[tool] ?? cat.icon
+                return (
+                  <span key={tool} className="pill">
+                    <Icon size={14} aria-hidden="true" />
+                    {tool}
+                  </span>
+                )
+              })}
             </div>
           </div>
         ))}
